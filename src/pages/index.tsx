@@ -1,7 +1,9 @@
 const Home = () => {
   return (
     <>
-      <h1>home</h1>
+      <div className="h-[400vh] bg-navbar">
+        <h1>home</h1>
+      </div>
     </>
   )
 }
