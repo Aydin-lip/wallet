@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <>
       <style children={style} />
-      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} fixed transition-all duration-300 top-0 right-0 left-0`}>
+      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} fixed z-[2] transition-all duration-300 top-0 right-0 left-0`}>
         <div className="flex justify-between items-center">
           <div className={`${scroll ? 'py-6' : 'pl-8 py-8'} pr-20 transition-all duration-300`}>
             <Image

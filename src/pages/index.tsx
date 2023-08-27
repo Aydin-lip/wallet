@@ -1,8 +1,10 @@
+import FirstSection from "@/components/home/firstSection";
+
 const Home = () => {
   return (
     <>
-      <div className="h-[400vh] bg-navbar">
-        <h1>home</h1>
+      <div className="h-[400vh] bg-background">
+        <FirstSection />
       </div>
     </>
   )

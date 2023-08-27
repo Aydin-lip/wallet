@@ -10,20 +10,18 @@ const config: Config = {
     extend: {
       backgroundColor: {
         'active-them': '#9cd291',
-        'navbar': '#302f2d'
+        'navbar': '#302f2d',
+        'background': '#13181c'
       },
       colors: {
         'active-them': '#9cd291',
-        'navbar': '#302f2d'
+        'navbar': '#302f2d',
+        'background': '#13181c'
       },
       borderColor: {
         'active-them': '#9cd291',
-        'navbar': '#302f2d'
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'navbar': '#302f2d',
+        'background': '#13181c'
       },
       fontFamily: {
         'iranSans': 'iranSans'
