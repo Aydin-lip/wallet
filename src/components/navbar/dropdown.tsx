@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 interface IProps {
   isHoverElement: boolean
   children: JSX.Element
+  big?: boolean
 }
-const DropdownNavbar = ({ isHoverElement, children }: IProps) => {
+const DropdownNavbar = ({ isHoverElement, children, big = false }: IProps) => {
   const [hoverRef, isHovering] = useHover();
   const [initialState, setInitialState] = useState<boolean | null>(null)
 
@@ -19,37 +20,11 @@ const DropdownNavbar = ({ isHoverElement, children }: IProps) => {
 
   if (initialState === null) return <></>;
 
-  const style = `
-  .open {
-    animation: openAnimation .1s linear forwards;
-  }
-  .close {
-    animation: closeAnimation .1s linear forwards;
-  }
-  @keyframes openAnimation {
-    from {
-      margin-top: -1rem;
-    }
-    to {
-      margin-top: 0;
-    }
-  }
-  @keyframes closeAnimation {
-    from {
-      margin-top: 0;
-    }
-    to {
-      margin-top: -1rem;
-      display: none;
-    }
-  }
-  `
   return (
     <>
-      <style children={style} />
       <div className="relative">
         {(isHoverElement || isHovering) &&
-          <div ref={hoverRef} className={`absolute top-3 -right-[10rem] cursor-default pt-10 ${isHoverElement || isHovering ? 'open' : 'close'} `}>
+          <div ref={hoverRef} className={`${big ? 'fixed top-14' : 'absolute top-3'} translate-x-1/2 right-1/2 cursor-default pt-10 ${isHoverElement || isHovering ? 'open' : 'close'} `}>
             <div className={`p-4 rounded-lg shadow-xl bg-navbar`}>
               {children}
             </div>

@@ -1,28 +1,80 @@
+import { useState, useEffect } from 'react'
 import Image from "next/image"
 import Logo from "@/assets/images/logo.png"
 import { ShoppingBagIcon } from "@heroicons/react/24/outline"
-import { LockCircle } from "iconsax-react"
+import { Category, LockCircle } from "iconsax-react"
 import FaceBookIcon from "@/assets/svgs/facebook"
 import TwitterIcon from "@/assets/svgs/twitter"
 import SkypeIcon from "@/assets/svgs/skype"
 import Items from "./items"
 
+const style = `
+.open {
+  animation: openAnimation .1s linear forwards;
+}
+.close {
+  animation: closeAnimation .1s linear forwards;
+}
+@keyframes openAnimation {
+  from {
+    margin-top: -1rem;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+@keyframes closeAnimation {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -1rem;
+    display: none;
+  }
+}
+`
+
 const Navbar = () => {
+  const [scroll, setScroll] = useState<boolean>(false)
+
+  useEffect(() => {
+    // For change height navbar scroll time
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () =>
+        setScroll(window.pageYOffset >= 80),
+      );
+    }
+  }, []);
+
   return (
     <>
-      <nav className="absolute top-0 right-0 left-0">
-        <div className="flex justify-between">
-          <div className="flex items-center gap-8 py-8 pr-20">
+      <style children={style} />
+      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} fixed transition-all duration-300 top-0 right-0 left-0`}>
+        <div className="flex justify-between items-center">
+          <div className={`${scroll ? 'py-6' : 'pl-8 py-8'} pr-20 transition-all duration-300`}>
             <Image
               src={Logo}
               alt="logo navbar"
               width={400}
               height={200}
-              className="w-24"
+              className={`${scroll ? 'w-16' : 'w-24'} transition-all duration-300`}
             />
+          </div>
+          <div className={`${scroll ? '' : 'ml-auto'} transition-all duration-300`}>
             <Items />
           </div>
-          <div className="flex gap-4 items-center pl-12">
+          <div className={`${scroll ? '' : 'hidden'} ml-28 transition-all duration-300`}>
+            <div className='p-1 border rounded-full border-active-them cursor-pointer transition-all duration-300 hover:bg-active-them'>
+              <span className='block p-2 rounded-full bg-active-them'>
+                <Category
+                  size={20}
+                  color='#fff'
+                  variant="Bulk"
+                />
+              </span>
+            </div>
+          </div>
+          <div className={`flex gap-4 items-center pl-12 ${scroll ? 'hidden' : ''} transition-all duration-300`}>
             <div className="h-1/2 border-l border-neutral-700 px-6 flex items-center gap-4 text-white">
               <div className="relative cursor-pointer">
                 <ShoppingBagIcon className="w-5" />
