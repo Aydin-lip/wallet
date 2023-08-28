@@ -11,7 +11,8 @@ const config: Config = {
       backgroundColor: {
         'active-them': '#9cd291',
         'navbar': '#302f2d',
-        'background': '#13181c'
+        'background': '#13181c',
+        'background-light': '#191f26'
       },
       colors: {
         'active-them': '#9cd291',
