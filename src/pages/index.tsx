@@ -2,6 +2,7 @@ import FirstSection from "@/components/home/firstSection";
 import FourthSection from "@/components/home/fourthSection";
 import SecondSection from "@/components/home/secondSection";
 import ThirdSection from "@/components/home/thirdSection";
+import FifthSection from '@/components/home/fifthSection'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <SecondSection />
         <ThirdSection />
         <FourthSection />
+        <FifthSection />
       </div>
     </>
   )

@@ -95,7 +95,7 @@ const FourthSection = () => {
       <style children={styleAnimation} />
       <section className="relative z-[1] w-full h-[35rem]">
         <div>
-          <div className="absolute top-0 right-0 bottom-0 left-0 bg-no-repeat bg-contain" style={{ backgroundImage: `url(${FourthSectionBg.src})` }}></div>
+          <div className="absolute top-0 right-0 bottom-0 left-0 bg-no-repeat bg-cover" style={{ backgroundImage: `url(${FourthSectionBg.src})` }}></div>
           <div className='bg-no-repeat bg-contain w-[30rem] h-[19.7rem] absolute top-16 right-48 shadow-[0px_0px_10px_#0F0F0F]' style={{ backgroundImage: `url(${Chart.src})` }}></div>
         </div>
         <div>
