@@ -15,18 +15,26 @@ const config: Config = {
         'background-light': '#191f26'
       },
       colors: {
+        light: {
+          text: '--text-light',
+          background: '--background-light',
+        },
+        dark: {
+          text: '--text-dark',
+          background: '--background-dark',
+        },
         'active-them': '#9cd291',
-        'navbar': '#302f2d',
-        'background': '#13181c'
+        navbar: '#302f2d',
+        background: '#13181c',
       },
       borderColor: {
         'active-them': '#9cd291',
-        'navbar': '#302f2d',
-        'background': '#13181c'
+        navbar: '#302f2d',
+        background: '#13181c',
       },
       fontFamily: {
-        'iranSans': 'iranSans'
-      }
+        iranSans: 'iranSans',
+      },
     },
   },
   plugins: [],
