@@ -3,16 +3,19 @@ import FourthSection from "@/components/home/fourthSection";
 import SecondSection from "@/components/home/secondSection";
 import ThirdSection from "@/components/home/thirdSection";
 import FifthSection from '@/components/home/fifthSection'
+import SeventhSection from "@/components/home/seventhSection";
 
 const Home = () => {
   return (
     <>
-      <div className="bg-background pb-40">
+      <div className="bg-background">
         <FirstSection />
         <SecondSection />
         <ThirdSection />
         <FourthSection />
         <FifthSection />
+
+        <SeventhSection />
       </div>
     </>
   )
