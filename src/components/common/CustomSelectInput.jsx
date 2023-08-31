@@ -1,13 +1,6 @@
 import React from 'react'
 import Select from 'react-select'
 
-const selectBoxStyle = {
-  width: '100%',
-  border: 'none !important',
-  backgroundColor: 'transparent',
-  
-}
-
 const customStyles = {
   option: (provided) => ({
     ...provided,
@@ -22,7 +15,7 @@ const customStyles = {
   singleValue: (provided) => ({
     ...provided,
     color: 'white',
-    zIndex: '999',
+    // zIndex: '999',
   }),
 }
 

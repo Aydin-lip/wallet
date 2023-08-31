@@ -15,7 +15,7 @@ const Items = () => {
 
   return (
     <>
-      <ul className="flex gap-4 text-white">
+      <ul className="flex gap-4 text-white items-center">
         <li ref={hoverItemOne} className="py-2 cursor-pointer flex items-center gap-1 transition-all hover:text-active-them p-1">
           دموها
           <ChevronDownIcon className="w-4 text-neutral-400" />

@@ -2,7 +2,7 @@ import SwiperCore, { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.min.css'
 import Link from 'next/link'
-import SVGData from '../../assets/images/logos'
+import SVGData from '@/assets/images/logos'
 import Image from 'next/image'
 
 export const SwiperSlider = () => {
@@ -32,7 +32,7 @@ export const SwiperSlider = () => {
                   <div>
                     <Image
                       alt=""
-                      className="w-[100%] h-auto object-cover rounded-lg"
+                      className="w-28 h-auto object-cover rounded-lg"
                       src={item.logo.src}
                       width={40}
                       height={30}

@@ -1,24 +1,50 @@
-import Testimony from './Testimony'
+/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
+import { SwiperSlider } from './components/SwiperSlider'
+import TestimonyBg from '@/assets/images/circles.svg'
+import Avatar from '@/assets/images/hero-pic-3.jpg'
 
-const FirstSection = () => {
+export default function Testimony() {
+  const sectionStyle = {
+    backgroundImage: `url(${TestimonyBg.src})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+  }
+
   return (
-    <>
-      <section className="w-full h-screen">
-        <div
-          className="relative w-full h-60 bg-top bg-no-repeat"
-          style={{
-            backgroundImage: `url(${FirstSectionBg.src})`,
-            backgroundSize: '70rem 40rem',
-          }}
-        >
-          <div className="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-          <div className="absolute top-0 left-[30rem] w-0 h-0 shadow-[0_0_200px_90px_#747474]"></div>
-          <div className="absolute -top-8 left-[19rem] w-0 h-0 shadow-[0_0_160px_45px_#b7e6ac]"></div>
-          <Testimony />
+    <section className="mt-20">
+      <div
+        className="w-3/4 lg-w-1/2 mx-auto lg:mb-0 p-4 text-white flex flex-col items-center"
+        style={sectionStyle}
+      >
+        <h3 className="text-4xl lg:text-5xl mb-16 text-center">
+          آنها از WALLET لذت می‌برند
+        </h3>
+        <div className="h-full flex flex-col md:flex-row text-center md:text-right items-center gap-8">
+          <Image
+            alt="testimonial"
+            className="w-40 h-40 mb-8 flex-shrink-0 object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src={Avatar}
+          />
+          <div>
+            <p className="leading-relaxed flex-grow text-lg">
+              بیست سال بعد شما از کارهایی که انجام نداده‌اید ناراحت می‌شوید نه
+              کارهایی که انجام داده‌اید، پس طناب قایق‌تان را از ساحل باز کنید و
+              از ساحل امن خود به سوی آب‌های آزاد برانید و خطر کنید. جستجو کنید،
+              رویا بسازید و کشف کنید.
+            </p>
+            <br />
+            <span className="inline-block h-1 w-10 rounded bg-active-them-dark mt-6 mb-4"></span>
+            <div className="font-medium">
+              <h2 className="title-font tracking-wider text-sm">
+                یونس کیشی‌‌زاده
+              </h2>
+              <p className="">مدیرعامل</p>
+            </div>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+      <SwiperSlider />
+    </section>
   )
 }
-
-export default FirstSection

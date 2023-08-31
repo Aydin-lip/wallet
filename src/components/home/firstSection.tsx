@@ -1,10 +1,10 @@
 import FirstSectionBg from '@/assets/images/first-section_bg.jpg'
-import HeroSection from './HeroSection'
+import HeroSection from './components/HeroSection'
 
 const FirstSection = () => {
   return (
     <>
-      <section className="w-full h-screen">
+      <section className="w-full h-[40rem]">
         <div
           className="relative w-full h-60 bg-top bg-no-repeat"
           style={{

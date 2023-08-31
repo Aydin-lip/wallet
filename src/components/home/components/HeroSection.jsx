@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import CustomSelectInput from '../common/CustomSelectInput'
-import TestimonyBg from '../../assets/images/hero-pic-3.jpg'
+import CustomSelectInput from '@/components/common/CustomSelectInput'
 import CountryFlag from './CountryFlag'
 
 const currencies = [
@@ -31,12 +30,6 @@ export default function HeroSection() {
   const [destinationFlag, setDestinationFlag] = useState()
   const [inputValue, setInputValue] = useState('')
 
-  const sectionStyle = {
-    backgroundImage: `url(${TestimonyBg})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-  }
-
   const handleInputChange = (e) => {
     setInputValue(e.target.value)
   }
@@ -44,9 +37,9 @@ export default function HeroSection() {
   useEffect(() => {
     if (selectedDestination) {
       setDestinationFlag(selectedDestination.value.replace(/['"]+/g, ''))
-      console.log(destinationFlag)
     }
   }, [selectedDestination, destinationFlag])
+
   return (
     <section className="text-white body-font max-w-[1200px] mx-auto">
       <div className="container px-5 py-24 mx-auto flex flex-col lg:flex-row gap-10 justify-center items-center">
@@ -59,9 +52,9 @@ export default function HeroSection() {
             ارزان‌‌ترین ارائه‌‌دهنده انتقال را پیدا کنید
           </p>
         </div>
-        <div className="lg:w-1/2 relative rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 z-10 bg-[#38bb7a]/20">
+        <div className="lg:w-1/2 relative rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 bg-[#38bb7a]/20">
           <div className="relative mb-4">
-            <label for="full-name" className="leading-7 text-sm">
+            <label htmlFor="full-name" className="leading-7 text-sm">
               بیایید پول شما را انتقال دهیم
             </label>
             <div className="flex flex-row-reverse justify-between items-center border border-[#ccc] rounded-md bg-[#ffffff33] p-2 selectBoxContainer">
@@ -80,7 +73,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="relative mb-4">
-            <label for="email" className="leading-7 text-sm">
+            <label htmlFor="email" className="leading-7 text-sm">
               از کشور
             </label>
             <div className="flex flex-row-reverse justify-between items-center border border-[#ccc] rounded-md bg-[#ffffff33] p-2">
@@ -93,7 +86,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="relative mb-4">
-            <label for="email" className="leading-7 text-sm">
+            <label htmlFor="email" className="leading-7 text-sm">
               به کشور
             </label>
             <div className="flex flex-row-reverse justify-between items-center border border-[#ccc] rounded-md bg-[#ffffff33] p-2">
@@ -108,7 +101,6 @@ export default function HeroSection() {
             </div>
           </div>
           <button
-            onClick={() => console.log('you clicked')}
             className="text-white bg-active-them border-0 py-2 px-8 focus:outline-none hover:bg-active-them-dark rounded text-lg cursor-pointer"
           >
             مقایسه سرویس‌‌دهنده‌‌‌ها

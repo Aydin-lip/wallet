@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       backgroundColor: {
         'active-them': '#9cd291',
-        'active-them-dark': '#6d9265',
-        navbar: '#302f2d',
-        background: '#13181c',
+        'navbar': '#302f2d',
+        'background': '#13181c',
+        'background-light': '#191f26'
       },
       colors: {
         light: {
