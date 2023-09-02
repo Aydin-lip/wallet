@@ -41,18 +41,18 @@ export default function HeroSection() {
   }, [selectedDestination, destinationFlag])
 
   return (
-    <section className="text-white body-font max-w-[1200px] mx-auto">
-      <div className="container px-5 py-24 mx-auto flex flex-col lg:flex-row gap-10 justify-center items-center">
+    <div className="text-white body-font max-w-[1200px] mx-auto h-full mt-12">
+      <div className="container mx-auto w-full h-full flex flex-col lg:flex-row gap-10 justify-center items-center">
         <div className=" md:pr-16 lg:pr-0 pr-0">
-          <h1 className="title-font font-medium text-3xl lg:text-5xl mt-4">
+          <h1 className="title-font text-3xl lg:text-5xl mt-4 font-bold">
             نقل و انتقال مالی جهانی
           </h1>
-          <p className="leading-relaxed mt-4">
+          <p className="leading-relaxed mt-12 text-xl">
             در هزینه‌‌ها صرفه‌‌جویی کنید. بهترین نرخ‌‌های ارز را به‌‌دست آورید.
             ارزان‌‌ترین ارائه‌‌دهنده انتقال را پیدا کنید
           </p>
         </div>
-        <div className="lg:w-1/2 relative rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 bg-[#38bb7a]/20">
+        <div className="lg:w-1/2 relative rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 bg-[#00000040]">
           <div className="relative mb-4">
             <label htmlFor="full-name" className="leading-7 text-sm">
               بیایید پول شما را انتقال دهیم
@@ -107,6 +107,6 @@ export default function HeroSection() {
           </button>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
