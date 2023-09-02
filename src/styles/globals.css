@@ -12,6 +12,7 @@
 * {
   font-family: IranSans;
   direction: rtl;
+  scroll-behavior: smooth;
 }
 
 body {
