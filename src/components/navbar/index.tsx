@@ -8,6 +8,7 @@ import TwitterIcon from "@/assets/svgs/twitter"
 import SkypeIcon from "@/assets/svgs/skype"
 import Items from "./items"
 import { useAppContext } from '@/context/state'
+import UpperNav from './UpperNav'
 
 const style = `
 .open {
@@ -43,23 +44,36 @@ const Navbar = () => {
     // For change height navbar scroll time
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () =>
-        setScroll(window.pageYOffset >= 80),
-      );
+        setScroll(window.pageYOffset >= 80)
+      )
     }
-  }, []);
+  }, [])
 
   return (
     <>
       <style children={style} />
-      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} fixed z-[2] transition-all duration-300 top-0 right-0 left-0`}>
+      <nav
+        className={`${
+          scroll ? 'shadow-lg bg-black' : ''
+        } fixed z-[2] transition-all duration-300 top-0 right-0 left-0`}
+      >
+        {/* <div className={scroll ? "translate-y-[-100%] duration-300 h-0 opacity-0" : "h-10"}>
+          <UpperNav />
+        </div> */}
         <div className="flex justify-between items-center">
-          <div className={`${scroll ? 'py-6' : 'pl-8 py-8'} pr-20 transition-all duration-300`}>
+          <div
+            className={`${
+              scroll ? 'py-6' : 'pl-8 py-8'
+            } pr-20 transition-all duration-300`}
+          >
             <Image
               src={Logo}
               alt="logo navbar"
               width={400}
               height={200}
-              className={`${scroll ? 'w-16' : 'w-24'} transition-all duration-300`}
+              className={`${
+                scroll ? 'w-16' : 'w-24'
+              } transition-all duration-300`}
             />
           </div>
           <div className={`${scroll ? '' : 'ml-auto'} transition-all duration-300`}>
@@ -67,14 +81,14 @@ const Navbar = () => {
               <Items />
             </div>
           </div>
-          <div className={`${scroll ? '' : 'hidden'} ml-28 transition-all duration-300`}>
-            <div className='p-1 border rounded-full border-active-them cursor-pointer transition-all duration-300 hover:bg-active-them'>
-              <span className='block p-2 rounded-full bg-active-them'>
-                <Category
-                  size={20}
-                  color='#fff'
-                  variant="Bulk"
-                />
+          <div
+            className={`${
+              scroll ? '' : 'hidden'
+            } ml-28 transition-all duration-300`}
+          >
+            <div className="p-1 border rounded-full border-active-them cursor-pointer transition-all duration-300 hover:bg-active-them">
+              <span className="block p-2 rounded-full bg-active-them">
+                <Category size={20} color="#fff" variant="Bulk" />
               </span>
             </div>
           </div>
