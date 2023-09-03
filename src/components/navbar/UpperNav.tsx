@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import {
   BsFillTelephoneFill,
   BsEnvelopeFill,
   BsFillGeoAltFill,
 } from 'react-icons/bs'
+import LanguageSelectBox from '../home/components/LangSelectBox'
 
 export default function UpperNav() {
   return (
-    <section className={`w-screen bg-green-700 p-4 `}>
+    <section className="w-screen bg-green-700 p-2">
       <div className="flex flex-col md:flex-row items-center justify-around">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -42,11 +42,13 @@ export default function UpperNav() {
             <div className="text-white">ایران، تهران، میدان آزادی</div>
           </div>
         </div>
-        <div className='flex gap-4'>
+        <div className="flex gap-4">
           <span className="text-white">پشتیبانی</span> {'|'}
           <span className="text-white">کمک</span>
           {'|'}
-          <span className="text-white">انگلیسی</span>
+          <span className="text-white">
+            <LanguageSelectBox />
+          </span>
         </div>
       </div>
     </section>
