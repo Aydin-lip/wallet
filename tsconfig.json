@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/home/components/CountryFlag.jsx"
+    "src/components/home/components/CountryFlag.tsx"
   ],
   "exclude": ["node_modules"]
 }
