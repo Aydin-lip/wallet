@@ -5,6 +5,8 @@ import Link from 'next/link'
 import SVGData from '@/assets/images/logos'
 import Image from 'next/image'
 
+SwiperCore.use([Autoplay])
+
 export const SwiperSlider = () => {
   SwiperCore.use([Autoplay])
   return (

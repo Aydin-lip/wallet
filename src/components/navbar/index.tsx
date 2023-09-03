@@ -57,9 +57,9 @@ const Navbar = () => {
           scroll ? 'shadow-lg bg-black' : ''
         } fixed z-[2] transition-all duration-300 top-0 right-0 left-0`}
       >
-        {/* <div className={scroll ? "translate-y-[-100%] duration-300 h-0 opacity-0" : "h-10"}>
+        <div className={scroll ? "translate-y-[-100%] duration-300 h-0 opacity-0" : "h-10"}>
           <UpperNav />
-        </div> */}
+        </div>
         <div className="flex justify-between items-center">
           <div
             className={`${
