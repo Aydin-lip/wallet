@@ -20,7 +20,7 @@ const SeventhSection = () => {
             <span>تماس با ما</span>
           </div>
 
-          <div className="flex gap-8">
+          <div className="flex max-lg:flex-col gap-2 min-[400px]:gap-4 sm:gap-8 p-2">
             <Ruls />
             <Contact />
           </div>

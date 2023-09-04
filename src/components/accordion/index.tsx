@@ -1,11 +1,3 @@
-import { useState } from "react";
-import { BiCategory } from "react-icons/bi";
-import { TbDiscount2 } from "react-icons/tb";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { BsPaypal } from "react-icons/bs";
-import BgAccordion from '@/assets/images/bg-accordion.png'
-import AccordionItem from "./items";
-
 const Style = `
 .accordion-anim {
   animation: accordion .5s ease forwards;
@@ -37,7 +29,6 @@ interface IProps {
   children: JSX.Element[]
 }
 const Accordion = ({ children }: IProps) => {
-  const [show, setShow] = useState<number>(0)
 
   return (
     <>

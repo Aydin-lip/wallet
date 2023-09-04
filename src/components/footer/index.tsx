@@ -8,20 +8,20 @@ import BackgroundMoj from '@/assets/images/bg-space.jpg'
 const Footer = () => {
   return (
     <>
-      <section className="w-full h-[23rem] bg-no-repeat bg-cover mb-[485px]" style={{ backgroundImage: `url('${BackgroundMoj.src}')` }}>
+      <section className="w-full h-[23rem] bg-no-repeat bg-cover lg:mb-[400px] min-[1200px]:mb-[485px]" style={{ backgroundImage: `url('${BackgroundMoj.src}')` }}>
         <div className="w-full h-full bg-gradient-to-t from-black to-transparent flex justify-center items-center">
           <div className="text-center">
             <span className="underline text-active-them font-bold text-2xl">شروع پروژه</span>
-            <h4 className="text-4xl text-white font-bold mt-6 mb-12">هم اکنون با ما تماس بگیرید</h4>
+            <h4 className="text-2xl min-[400px]:text-3xl md:text-4xl text-white font-bold mt-4 min-[400px]:mt-6 mb-8 min-[400px]:mb-12 mx-2">هم اکنون با ما تماس بگیرید</h4>
             <button className="text-white bg-active-them py-4 px-8 rounded-[1rem_0_1rem_0] transition-all duration-300 hover:rounded-[0_1rem_0_1rem] hover:bg-white hover:text-active-them font-bold text-sm">تماس با ما</button>
           </div>
         </div>
       </section>
 
-      <footer className="text-white bg-black fixed bottom-0 right-0 left-0 -z-[1] px-20">
+      <footer className="text-white bg-black lg:fixed lg:bottom-0 lg:right-0 lg:left-0 -z-[1] px-4 min-[1200px]:px-20">
         <div>
-          <div className="flex justify-between gap-4 py-20">
-            <div className="px-20">
+          <div className="grid sm:grid-cols-2 lg:flex justify-between gap-8 sm:gap-y-12 lg:gap-4 py-10 min-[1200px]:py-20">
+            <div className="sm:px-8 min-[1200px]:px-20">
               <Image
                 src={Logo}
                 alt="logo navbar"
@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[13rem]">
+            <div className="md:w-[13rem]">
               <h4 className="text-xl font-bold mb-3">شرکت</h4>
               <div className="h-[3px] w-20 bg-active-them rounded-md mb-3"></div>
               <ul className="flex flex-col gap-1 text-neutral-400">
@@ -73,7 +73,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-[23rem]">
+            <div className="md:w-[23rem]">
               <h4 className="font-bold mb-3 text-xl">خبرنامه سایت</h4>
               <div className="h-[3px] w-20 bg-active-them rounded-md mb-3"></div>
               <div>
@@ -86,11 +86,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="py-6 border-t border-neutral-900 flex justify-between items-center">
+          <div className="py-2 sm:py-6 border-t border-neutral-900 flex justify-between items-center">
             <div>
               <span className="text-sm text-neutral-400">© قالب شرکتی کریوت. متن کپی رایت</span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex sm:gap-4">
               <span className="w-10 h-10 cursor-pointer flex justify-center items-center rounded-full transition-all border-neutral-500 hover:border">
                 <FaceBookIcon color="#fff" className="w-5" />
               </span>

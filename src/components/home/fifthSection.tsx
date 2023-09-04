@@ -10,15 +10,15 @@ const data = [
 const FifthSection = () => {
   return (
     <>
-      <section className="relative mt-20">
+      <section className="relative min-[400px]:mt-20">
         <div className="absolute top-0 left-0 w-full h-full bg-no-repeat" style={{ backgroundImage: `url(${BlogOverlayBg.src})` }}>
           <div className='absolute bottom-0 w-full h-[25rem] bg-gradient-to-t from-background to-transparent'></div>
         </div>
-        <div className='flex flex-col justify-center items-center gap-8 pt-20'>
+        <div className='flex flex-col justify-center items-center gap-8 min-[400px]:pt-20'>
           <div className='text-center text-white'>
-            <h1 className='text-[2rem] font-bold'>آخرین بیانیه مطبوعاتی <span className='underline decoration-active-them'>وبلاگ</span></h1>
+            <h1 className='text-2xl min-[400px]:text-[2rem] font-bold'>آخرین بیانیه مطبوعاتی <span className='underline decoration-active-them'>وبلاگ</span></h1>
           </div>
-          <div className='flex justify-center gap-8 relative mt-10'>
+          <div className='flex justify-center max-lg:flex-wrap gap-2 min-[400px]:gap-4 lg:gap-8 relative mt-10 px-2'>
             {data.map(d =>
               <BlogItem data={d} key={d.id} />
             )}

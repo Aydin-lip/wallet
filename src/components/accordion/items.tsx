@@ -1,4 +1,4 @@
-import { useState, Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import { MdKeyboardArrowDown } from "react-icons/md"
 
 interface IProps {

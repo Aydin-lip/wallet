@@ -7,7 +7,7 @@ const FirstSection = () => {
 
   return (
     <>
-      <section className="w-full h-[40rem]">
+      <section className="w-full">
         <div
           className="bg-background absolute top-0 right-0 left-0 w-full h-60 bg-top bg-no-repeat"
           style={{
@@ -21,7 +21,7 @@ const FirstSection = () => {
             <div className="absolute -top-8 left-[19rem] w-0 h-0 shadow-[0_0_160px_45px_#b7e6ac]"></div>
           </div>
         </div>
-        <div className={`h-full transition-all duration-[2s] ease-in-out ${loading ? 'opacity-0 translate-y-10' : ''}`}>
+        <div className={`relative mt-12 min-[400px]:mt-20 sm:mt-28 md:mt-40 mb-16 h-full transition-all duration-[2s] ease-in-out ${loading ? 'opacity-0 translate-y-10' : ''}`}>
           <HeroSection />
         </div>
       </section>

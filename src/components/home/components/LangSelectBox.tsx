@@ -1,3 +1,4 @@
+import { GiEarthAfricaEurope } from "react-icons/gi";
 import { useEffect, useRef, useState } from 'react'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import Flags from 'country-flag-icons/react/3x2'
@@ -37,24 +38,25 @@ export default function LanguageSelectBox() {
     <div className="relative">
       <div className="relative" ref={dropdownRef}>
         <div className="flex relative">
+          <span
+            onClick={toggleDropdown}
+            className="appearance-none border-none outline-none bg-transparent text-white flex items-center hover:text-active-them"
+          >
+            <GiEarthAfricaEurope className="w-8 pl-2 text-active-them" />
+            {selectedOption}
+          </span>
           <button
             onClick={toggleDropdown}
-            className="cursor-pointer flex items-center text-white outline-none focus:outline-none pl-2"
+            className="cursor-pointer flex items-center text-white outline-none focus:outline-none pr-2"
           >
             <MdOutlineKeyboardArrowDown />
           </button>
-          <input
-            value={selectedOption}
-            onClick={toggleDropdown}
-            readOnly
-            className="appearance-none border-none outline-none bg-transparent text-white"
-          />
         </div>
         <div
           className={
             isOpen
-              ? 'absolute left-0 top-8 shadow z-40 w-full rounded max-h-select overflow-y-auto text-black bg-white opacity-100 duration-500'
-              : 'h-0 opacity-0 pointer-events-none'
+              ? 'p-2 absolute left-0 top-8 shadow z-40 w-full rounded max-h-select overflow-y-auto text-black bg-white opacity-100 duration-500'
+              : 'h-0 opacity-0 pointer-events-none hidden'
           }
         >
           <div className="flex flex-col w-full">
