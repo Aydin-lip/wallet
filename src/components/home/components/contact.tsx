@@ -4,7 +4,7 @@ import { FaHandPointLeft } from 'react-icons/fa'
 const Contact = () => {
   return (
     <>
-      <div className="p-10 rounded-[2rem] bg-[#2d3440] w-[30rem]">
+      <div className="p-10 rounded-[2rem] bg-[#2d3440] w-full sm:w-[40rem] lg:w-[25rem] min-[1200px]:w-[30rem]">
         <div className="flex flex-col items-center gap-3 my-4">
           <span className="font-bold">آیا سوالی دارید؟</span>
           <span>تماس با ما</span>

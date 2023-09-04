@@ -39,7 +39,7 @@ const Ruls = () => {
 
   return (
     <>
-      <div className="w-[40rem]">
+      <div className="w-full sm:w-[40rem] lg:w-[30rem] min-[1200px]:w-[40rem]">
         <Accordion>
           <AccordionItem id={1} show={show === 1} setShow={setShow} icon={<BsPaypal />} title='نحوه خرید و پرداخت' top>
             <div className={`py-10 px-12 relative h-full bg-background`}>
