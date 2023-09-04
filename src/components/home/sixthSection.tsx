@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
-import { SwiperSlider } from './components/SwiperSlider'
 import TestimonyBg from '@/assets/images/circles.svg'
 import Avatar from '@/assets/images/hero-pic-3.jpg'
+import { SwiperSlider } from './components/SwiperSlider'
 
 export default function Testimony() {
   const sectionStyle = {

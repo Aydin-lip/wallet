@@ -10,6 +10,7 @@ import SkypeIcon from "@/assets/svgs/skype"
 import Items from "./items"
 import { useAppContext } from '@/context/state'
 import Menu from "./menu";
+import UpperNav from './UpperNav'
 
 const style = `
 .open {
@@ -46,15 +47,18 @@ const Navbar = () => {
     // For change height navbar scroll time
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () =>
-        setScroll(window.pageYOffset >= 80),
-      );
+        setScroll(window.pageYOffset >= 80)
+      )
     }
-  }, []);
+  }, [])
 
   return (
     <>
       <style children={style} />
-      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} max-md:shadow-lg max-md:bg-black fixed z-[2] transition-all duration-300 top-0 right-0 left-0`}>
+      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} max-md:shadow-lg max-md:bg-black fixed z-[5] transition-all duration-300 top-0 right-0 left-0`}>
+        <div className={scroll ? "translate-y-[-100%] duration-300 h-0 opacity-0" : "h-40 sm:h-20 min-[900px]:h-10"}>
+          <UpperNav />
+        </div>
         <div className="flex justify-between items-center">
           <div className={`${scroll ? 'py-6' : 'pl-8 py-6 md:py-8'} max-[400px]:p-4 pr-8 sm:pr-20 transition-all duration-300`}>
             <Image

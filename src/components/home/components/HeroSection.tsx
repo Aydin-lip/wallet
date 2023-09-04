@@ -1,36 +1,48 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import CustomSelectInput from '@/components/common/CustomSelectInput'
 import CountryFlag from './CountryFlag'
 
-const currencies = [
+type Currency = {
+  value: string
+  label: string
+}
+
+type Country = {
+  value: string
+  label: string
+}
+
+const currencies: Currency[] = [
   { value: 'pound', label: 'پوند' },
   { value: 'dollar', label: 'دلار' },
   { value: 'euro', label: 'یورو' },
 ]
 
-const countries = [
+const countries: Country[] = [
   { value: 'US', label: 'امریکا' },
   { value: 'GB', label: 'انگلیس' },
   { value: 'DE', label: 'آلمان' },
 ]
 
 export default function HeroSection() {
-  const [selectedCurrency, setSelectedCurrency] = useState({
+  const [selectedCurrency, setSelectedCurrency] = useState<Currency>({
     value: 'dollar',
     label: 'دلار',
   })
-  const [selectedOrigin, setSelectedOrigin] = useState({
+  const [selectedOrigin, setSelectedOrigin] = useState<Country>({
     value: 'US',
     label: 'امریکا',
   })
-  const [selectedDestination, setSelectedDestination] = useState({
+  const [selectedDestination, setSelectedDestination] = useState<Country>({
     value: 'US',
     label: 'امریکا',
   })
-  const [destinationFlag, setDestinationFlag] = useState()
-  const [inputValue, setInputValue] = useState('')
+  const [destinationFlag, setDestinationFlag] = useState<string | undefined>(
+    undefined
+  )
+  const [inputValue, setInputValue] = useState<string>('')
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 
