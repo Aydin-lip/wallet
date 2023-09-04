@@ -43,7 +43,7 @@ export default function HeroSection() {
   return (
     <div className="text-white body-font max-w-[1200px] mx-auto h-full mt-12">
       <div className="container mx-auto w-full h-full flex flex-col lg:flex-row sm:gap-6 md:gap-10 justify-center items-center">
-        <div className=" md:pr-16 lg:pr-0 pr-0">
+        <div className=" md:pr-16 lg:pr-0 pr-0 max-sm:px-2">
           <h1 className="title-font min-[400px]:text-2xl lg:text-5xl mt-10 min-[400px]:mt-12 lg:mt-4 font-bold">
             نقل و انتقال مالی جهانی
           </h1>
