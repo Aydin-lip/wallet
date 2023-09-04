@@ -13,10 +13,10 @@ const Home = () => {
         <FirstSection />
         <SecondSection />
         <ThirdSection />
-        <FourthSection />
+        {/* <FourthSection />
         <FifthSection />
         <SixthSection />
-        <SeventhSection />
+        <SeventhSection /> */}
       </div>
     </>
   )
