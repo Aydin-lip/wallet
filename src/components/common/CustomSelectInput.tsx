@@ -1,26 +1,40 @@
 import React from 'react'
 import Select from 'react-select'
 
+type Option = {
+  value: string
+  label: string
+}
+
+type CustomSelectInputProps = {
+  options: Option[]
+  selectedOption: Option
+  setSelectedOption: (newValue: Option | null) => void
+}
+
 const customStyles = {
-  option: (provided) => ({
+  option: (provided: any) => ({
     ...provided,
     color: 'black',
   }),
-  control: (provided) => ({
+  control: (provided: any) => ({
     ...provided,
     backgroundColor: 'transparent',
     border: 'none',
     boxShadow: 'none',
   }),
-  singleValue: (provided) => ({
+  singleValue: (provided: any) => ({
     ...provided,
     color: 'white',
-    // zIndex: '999',
   }),
 }
 
-const CustomSelectInput = ({ options, selectedOption, setSelectedOption }) => {
-  const handleOptionChange = (newValue) => {
+const CustomSelectInput: React.FC<CustomSelectInputProps> = ({
+  options,
+  selectedOption,
+  setSelectedOption,
+}) => {
+  const handleOptionChange = (newValue: Option | null) => {
     setSelectedOption(newValue)
   }
 
@@ -29,6 +43,8 @@ const CustomSelectInput = ({ options, selectedOption, setSelectedOption }) => {
       <Select
         styles={customStyles}
         options={options}
+        id="long-value-select"
+        instanceId="long-value-select"
         value={selectedOption}
         onChange={handleOptionChange}
         defaultValue={{ value: options[0].value, label: options[0].label }}
