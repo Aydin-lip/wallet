@@ -43,6 +43,8 @@ const CustomSelectInput: React.FC<CustomSelectInputProps> = ({
       <Select
         styles={customStyles}
         options={options}
+        id="long-value-select"
+        instanceId="long-value-select"
         value={selectedOption}
         onChange={handleOptionChange}
         defaultValue={{ value: options[0].value, label: options[0].label }}
