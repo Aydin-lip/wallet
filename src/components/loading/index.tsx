@@ -94,7 +94,7 @@ const Loading = () => {
   return (
     <>
       <style children={Style}></style>
-      <div className="bg-background fixed z-[3] top-0 right-0 left-0 bottom-0 flex justify-center items-center">
+      <div className="bg-background fixed z-20 top-0 right-0 left-0 bottom-0 flex justify-center items-center">
         <div className="flex justify-center items-center absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 animation-loading">
           <div className={`w-20 h-20 ${styleAnimation} animation-loading-1`}></div>
           <div className={`w-[3.7rem] h-[3.7rem] ${styleAnimation} animation-loading-2`}></div>
