@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
 
-type Option = {
+export type Option = {
   value: string
   label: string
 }
@@ -45,7 +45,7 @@ const CustomSelectInput: React.FC<CustomSelectInputProps> = ({
         options={options}
         id="long-value-select"
         instanceId="long-value-select"
-        value={selectedOption}
+        value={selectedOption || null}
         onChange={handleOptionChange}
         defaultValue={{ value: options[0].value, label: options[0].label }}
         placeholder={options[0].label}
