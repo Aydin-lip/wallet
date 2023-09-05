@@ -91,7 +91,7 @@ const Navbar = () => {
         <div
           className={
             scroll
-              ? 'translate-y-[-100%] duration-300 ease-in-out h-0 opacity-0'
+              ? 'translate-y-[-100%] duration-300 ease-in-out h-0 opacity-0 pointer-events-none'
               : 'h-40 sm:h-20 min-[900px]:h-10 ease-in-out duration-300'
           }
         >
