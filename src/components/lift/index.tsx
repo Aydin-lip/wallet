@@ -19,22 +19,19 @@ const LiftComponent = () => {
   const [show, setShow] = useState<boolean>(false)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => {
-        if (window?.screen.height < window?.scrollY) {
-          setShow(true)
-        } else {
-          setShow(false)
-        }
-      });
-    }
+    if (typeof window === 'undefined') return
+    
+    window.addEventListener('scroll', () => {
+      const shouldShow = window?.screen.height < window?.scrollY
+      setShow(shouldShow)
+    });
   }, [])
 
   return (
     <>
       <style children={Style}></style>
       <div
-        className={`${show ? '' : 'hidden opacity-0 bottom-40'} transition-all duration-500 animation-lift fixed left-6 min-[400px]:left-10 bottom-10 z-[2] bg-active-them w-12 h-12 rounded-[62%_38%_46%_54%_/_60%_63%_37%_40%] shadow-[0px_3px_10px_#868686] cursor-pointer`}
+        className={`${show ? '' : 'invisible opacity-0 bottom-40'} transition-all duration-500 animation-lift fixed left-6 min-[400px]:left-10 bottom-10 z-[2] bg-active-them w-12 h-12 rounded-[62%_38%_46%_54%_/_60%_63%_37%_40%] shadow-[0px_3px_10px_#868686] cursor-pointer`}
         onClick={() => window.scrollTo(0, 0)}
       >
         <span className="h-full w-full flex justify-center items-center">

@@ -8,7 +8,7 @@ import LanguageSelectBox from '../home/components/LangSelectBox'
 
 export default function UpperNav() {
   return (
-    <section className="w-screen bg-black p-2">
+    <section className="w-screen bg-black p-2 text-[.8rem]">
       <div className="flex flex-col min-[900px]:flex-row items-center justify-center lg:justify-around gap-2 sm:gap-4">
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
