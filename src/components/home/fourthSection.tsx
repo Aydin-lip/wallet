@@ -84,7 +84,7 @@ const FourthSection = () => {
       } else {
         num = 0
       }
-      // setDynamic(text)
+      setDynamic(text)
     }, 130)
   }, [])
 

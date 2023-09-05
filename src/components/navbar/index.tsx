@@ -1,3 +1,5 @@
+import { CgClose } from "react-icons/cg";
+import { BiSearchAlt2 } from "react-icons/bi";
 import { BiMenu } from "react-icons/bi";
 import { useState, useEffect } from 'react'
 import Image from "next/image"
@@ -36,11 +38,37 @@ const style = `
     display: none;
   }
 }
+
+.upper-open {
+  animation: upperOpen .1s linear forwards;
+}
+.upper-close {
+  animation: upperClose .1s linear forwards;
+}
+@keyframes upperOpen {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -1rem;
+    display: none;
+  }
+}
+@keyframes upperClose {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -1rem;
+    display: none;
+  }
+}
 `
 
 const Navbar = () => {
   const [scroll, setScroll] = useState<boolean>(false)
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false)
+  const [showSearch, setShowSearch] = useState<boolean>(false)
   const { loading } = useAppContext()
 
   useEffect(() => {
@@ -72,7 +100,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div
             className={`${
-              scroll ? 'py-6' : 'pl-8 py-6 md:py-8'
+              scroll ? 'py-6 pl-8' : 'pl-8 py-6 md:py-8'
             } max-[400px]:p-4 pr-8 sm:pr-20 transition-all duration-300`}
           >
             <Image
@@ -85,27 +113,43 @@ const Navbar = () => {
               } transition-all duration-300`}
             />
           </div>
-          <div
-            className={`${
-              scroll ? '' : 'ml-auto'
-            } max-[1200px]:hidden transition-all duration-300`}
-          >
-            <div
-              className={`transition-all duration-[2s] opacity-0 ${
-                loading ? '' : 'opacity-100'
-              }`}
-            >
+          <div className={`ml-auto max-[1200px]:hidden transition-all duration-300`}>
+            <div className={`transition-all duration-[2s] opacity-0 ${loading ? '' : 'opacity-100'}`}>
               <Items />
             </div>
           </div>
-          <div
-            className={`${
-              scroll ? '' : 'hidden'
-            } max-[1200px]:hidden ml-28 transition-all duration-300`}
-          >
-            <div className="p-1 border rounded-full border-active-them cursor-pointer transition-all duration-300 hover:bg-active-them">
-              <span className="block p-2 rounded-full bg-active-them">
-                <Category size={20} color="#fff" variant="Bulk" />
+          <div className={`${scroll ? 'flex' : 'hidden'} items-center gap-8 max-[1200px]:hidden ml-28 transition-all duration-300`}>
+            {showSearch ?
+              <div className="relative flex">
+                <div
+                  className="bg-[#e1e1e11f] text-white flex justify-center items-center w-10 cursor-pointer border border-l-0 border-neutral-600 rounded-r-md"
+                  onClick={() => setShowSearch(false)}
+                >
+                  <CgClose className="w-6 h-6" />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="جستجو کردن..."
+                    className="outline-none p-2 text-[.8rem] w-60 rounded-l-md bg-[#e1e1e11f] text-white border border-neutral-600"
+                  />
+                  <div className="absolute top-0 left-0 bottom-0 m-[.1rem] w-8 min-[400px]:w-10 bg-active-them rounded-[.3rem] flex justify-center items-center text-white cursor-pointer">
+                    <BiSearchAlt2 className="w-5 h-5" />
+                  </div>
+                </div>
+              </div>
+              :
+              <span onClick={() => setShowSearch(true)}>
+                <BiSearchAlt2 className="text-white w-6 h-6 min-[400px]:w-8 min-[400px]:h-8 cursor-pointer" />
+              </span>
+            }
+            <div className='p-1 border rounded-full border-active-them cursor-pointer transition-all duration-300 hover:bg-active-them'>
+              <span className='block p-2 rounded-full bg-active-them'>
+                <Category
+                  size={20}
+                  color='#fff'
+                  variant="Bulk"
+                />
               </span>
             </div>
           </div>
