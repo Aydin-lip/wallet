@@ -24,7 +24,7 @@ const DropdownNavbar = ({ isHoverElement, children, big = false }: IProps) => {
     <>
       <div className="relative">
         {(isHoverElement || isHovering) &&
-          <div ref={hoverRef} className={`${big ? 'fixed top-14' : 'absolute top-3'} translate-x-1/2 right-1/2 cursor-default pt-10 ${isHoverElement || isHovering ? 'open' : 'close'} `}>
+          <div ref={hoverRef} className={`${big ? 'fixed top-[6.5rem]' : 'absolute top-3'} translate-x-1/2 right-1/2 cursor-default pt-10 ${isHoverElement || isHovering ? 'open' : 'close'} `}>
             <div className={`p-4 rounded-lg shadow-xl bg-navbar`}>
               {children}
             </div>
