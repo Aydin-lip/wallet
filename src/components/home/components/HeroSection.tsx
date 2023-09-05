@@ -73,7 +73,7 @@ export default function HeroSection() {
               <CustomSelectInput
                 options={currencies}
                 selectedOption={selectedCurrency}
-                setSelectedOption={setSelectedCurrency}
+                setSelectedOption={e => setSelectedCurrency(e ? e : { value: 'dollar', label: 'دلار' })}
               />
               <input
                 className="border-none outline-none p-2 text-white bg-transparent max-w-[200px] flex-1"
@@ -92,7 +92,7 @@ export default function HeroSection() {
               <CustomSelectInput
                 options={countries}
                 selectedOption={selectedOrigin}
-                setSelectedOption={setSelectedOrigin}
+                setSelectedOption={e => setSelectedOrigin(e ? e : { value: 'US', label: 'امریکا' })}
               />
               {selectedOrigin && <CountryFlag country={selectedOrigin.value} />}
             </div>
@@ -105,7 +105,7 @@ export default function HeroSection() {
               <CustomSelectInput
                 options={countries}
                 selectedOption={selectedDestination}
-                setSelectedOption={setSelectedDestination}
+                setSelectedOption={e => setSelectedDestination(e ? e : { value: 'US', label: 'امریکا' })}
               />
               {selectedDestination && (
                 <CountryFlag country={selectedDestination.value} />

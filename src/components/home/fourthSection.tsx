@@ -53,10 +53,10 @@ let styleAnimation = `
 `
 const FourthSection = () => {
   const [dynamic, setDynamic] = useState("")
-  let texts = ['اعتبار', 'امنیت', 'سرعت', 'رمزارزها']
 
 
   useEffect(() => {
+    let texts = ['اعتبار', 'امنیت', 'سرعت', 'رمزارزها']
     let num = 0
     let length = 0
     let text = ''
@@ -87,7 +87,7 @@ const FourthSection = () => {
       }
       setDynamic(text)
     }, 130)
-  }, [texts])
+  }, [])
 
 
 
