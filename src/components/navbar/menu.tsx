@@ -64,7 +64,7 @@ const Menu = ({ isOpen, setIsOpen }: IProps) => {
   return (
     <>
       <style>{Style}</style>
-      {!close &&
+      {isOpen &&
         <div className={`fixed top-0 right-0 bottom-0 left-0 z-10 bg-black bg-opacity-40 transition-all opacity-0 ${isOpen ? 'opacity-100' : ''}`}>
           <div className='absolute top-0 right-0 bottom-0 left-0' onClick={() => setIsOpen(false)}></div>
           <div className={`transition-all absolute top-0 max-[400px]:right-0 ${isOpen ? 'openMenu' : 'closeMenu'} bottom-0 bg-background-light p-5 flex flex-col gap-2 min-[400px]:gap-4 shadow-[0px_0px_20px_#ffffff38] overflow-auto`}>
