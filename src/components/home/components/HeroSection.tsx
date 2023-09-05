@@ -1,39 +1,30 @@
 import { useState, useEffect, ChangeEvent } from 'react'
 import CustomSelectInput from '@/components/common/CustomSelectInput'
 import CountryFlag from './CountryFlag'
+import { Option } from '../../common/CustomSelectInput'
 
-type Currency = {
-  value: string
-  label: string
-}
-
-type Country = {
-  value: string
-  label: string
-}
-
-const currencies: Currency[] = [
+const currencies: Option[] = [
   { value: 'pound', label: 'پوند' },
   { value: 'dollar', label: 'دلار' },
   { value: 'euro', label: 'یورو' },
 ]
 
-const countries: Country[] = [
+const countries: Option[] = [
   { value: 'US', label: 'امریکا' },
   { value: 'GB', label: 'انگلیس' },
   { value: 'DE', label: 'آلمان' },
 ]
 
 export default function HeroSection() {
-  const [selectedCurrency, setSelectedCurrency] = useState<Currency>({
+  const [selectedCurrency, setSelectedCurrency] = useState<Option>({
     value: 'dollar',
     label: 'دلار',
   })
-  const [selectedOrigin, setSelectedOrigin] = useState<Country>({
+  const [selectedOrigin, setSelectedOrigin] = useState<Option>({
     value: 'US',
     label: 'امریکا',
   })
-  const [selectedDestination, setSelectedDestination] = useState<Country>({
+  const [selectedDestination, setSelectedDestination] = useState<Option>({
     value: 'US',
     label: 'امریکا',
   })
@@ -51,6 +42,24 @@ export default function HeroSection() {
       setDestinationFlag(selectedDestination.value.replace(/['"]+/g, ''))
     }
   }, [selectedDestination, destinationFlag])
+
+  const handleCurrencyChange = (newValue: Option | null) => {
+    if (newValue !== null) {
+      setSelectedCurrency(newValue)
+    }
+  }
+
+    const handleOriginChange = (newValue: Option | null) => {
+      if (newValue !== null) {
+        setSelectedOrigin(newValue)
+      }
+  }
+  
+      const handleDestinationChange = (newValue: Option | null) => {
+        if (newValue !== null) {
+          setSelectedDestination(newValue)
+        }
+      }
 
   return (
     <div className="text-white body-font max-w-[1200px] mx-auto h-full mt-12">
@@ -73,7 +82,7 @@ export default function HeroSection() {
               <CustomSelectInput
                 options={currencies}
                 selectedOption={selectedCurrency}
-                setSelectedOption={setSelectedCurrency}
+                setSelectedOption={handleCurrencyChange}
               />
               <input
                 className="border-none outline-none p-2 text-white bg-transparent max-w-[200px] flex-1"
@@ -92,7 +101,7 @@ export default function HeroSection() {
               <CustomSelectInput
                 options={countries}
                 selectedOption={selectedOrigin}
-                setSelectedOption={setSelectedOrigin}
+                setSelectedOption={handleOriginChange}
               />
               {selectedOrigin && <CountryFlag country={selectedOrigin.value} />}
             </div>
@@ -105,16 +114,14 @@ export default function HeroSection() {
               <CustomSelectInput
                 options={countries}
                 selectedOption={selectedDestination}
-                setSelectedOption={setSelectedDestination}
+                setSelectedOption={handleDestinationChange}
               />
               {selectedDestination && (
                 <CountryFlag country={selectedDestination.value} />
               )}
             </div>
           </div>
-          <button
-            className="max-[400px]:text-sm text-white bg-active-them border-0 py-2 px-8 focus:outline-none hover:bg-active-them-dark rounded text-lg cursor-pointer"
-          >
+          <button className="max-[400px]:text-sm text-white bg-active-them border-0 py-2 px-8 focus:outline-none hover:bg-active-them-dark rounded text-lg cursor-pointer">
             مقایسه سرویس‌‌دهنده‌‌‌ها
           </button>
         </div>
