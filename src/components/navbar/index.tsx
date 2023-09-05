@@ -83,18 +83,34 @@ const Navbar = () => {
   return (
     <>
       <style children={style} />
-      <nav className={`${scroll ? 'shadow-lg bg-black' : ''} max-md:shadow-lg max-md:bg-black fixed z-[5] transition-all duration-300 top-0 right-0 left-0`}>
-        <div className={`transition-all duration-300 ${scroll ? "translate-y-[-100%] h-0 opacity-0" : ""}`}>
+      <nav
+        className={`${
+          scroll ? 'shadow-lg bg-black' : ''
+        } max-md:shadow-lg max-md:bg-black fixed z-[5] transition-all duration-300 top-0 right-0 left-0`}
+      >
+        <div
+          className={
+            scroll
+              ? 'translate-y-[-100%] duration-300 ease-in-out h-0 opacity-0'
+              : 'h-40 sm:h-20 min-[900px]:h-10 ease-in-out duration-300'
+          }
+        >
           <UpperNav />
         </div>
-        <div className="flex justify-between items-center relative">
-          <div className={`${scroll ? 'py-6 pl-8' : 'pl-8 py-6 md:py-8'} max-[400px]:p-4 pr-8 sm:pr-20 transition-all duration-300`}>
+        <div className="flex justify-between items-center">
+          <div
+            className={`${
+              scroll ? 'py-6 pl-8' : 'pl-8 py-6 md:py-8'
+            } max-[400px]:p-4 pr-8 sm:pr-20 transition-all duration-300`}
+          >
             <Image
               src={Logo}
               alt="logo navbar"
               width={400}
               height={200}
-              className={`${scroll ? 'w-16' : 'w-14 min-[400px]:w-16 md:w-24'} transition-all duration-300`}
+              className={`${
+                scroll ? 'w-16' : 'w-14 min-[400px]:w-16 md:w-24'
+              } transition-all duration-300`}
             />
           </div>
           <div className={`ml-auto max-[1200px]:hidden transition-all duration-300`}>
@@ -137,8 +153,16 @@ const Navbar = () => {
               </span>
             </div>
           </div>
-          <div className={`flex gap-4 items-center pl-12 ${scroll ? 'hidden' : ''} max-[1200px]:hidden transition-all duration-300 ${loading ? 'opacity-0' : 'opacity-100'}`}>
-            <div className={`h-1/2 border-l border-neutral-700 px-6 flex items-center gap-4 text-white`}>
+          <div
+            className={`flex gap-4 items-center pl-12 ${
+              scroll ? 'hidden' : ''
+            } max-[1200px]:hidden transition-all duration-300 ${
+              loading ? 'opacity-0' : 'opacity-100'
+            }`}
+          >
+            <div
+              className={`h-1/2 border-l border-neutral-700 px-6 flex items-center gap-4 text-white`}
+            >
               <div className="relative cursor-pointer">
                 <ShoppingBagIcon className="w-5" />
                 <span className="rounded-full bg-green-600 absolute -bottom-2 -right-1 w-4 h-4 text-sm flex justify-center items-center">
@@ -162,7 +186,10 @@ const Navbar = () => {
               </span>
             </div>
           </div>
-          <div className="min-[1200px]:hidden ml-4 min-[400px]:ml-6 sm:ml-12 cursor-pointer" onClick={() => setIsOpenNav(true)}>
+          <div
+            className="min-[1200px]:hidden ml-4 min-[400px]:ml-6 sm:ml-12 cursor-pointer"
+            onClick={() => setIsOpenNav(true)}
+          >
             <BiMenu className="text-white w-8 h-8 min-[400px]:w-10 min-[400px]:h-10" />
           </div>
         </div>
