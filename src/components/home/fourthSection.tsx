@@ -11,6 +11,7 @@ import MarketEth from '@/assets/svgs/market_eth_banner.svg'
 import Order from '@/assets/svgs/order_banner.svg'
 import Deposit from '@/assets/svgs/deposit_banner.svg'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 let styleAnimation = `
 .animation-right {
@@ -86,13 +87,13 @@ const FourthSection = () => {
       }
       setDynamic(text)
     }, 130)
-  }, [])
+  }, [texts])
 
 
 
   return (
     <>
-      <style children={styleAnimation} />
+      <style>{styleAnimation}</style>
       <section className="relative z-[1] w-full -mt-20 min-[1200px]:mt-0 h-[63rem] min-[1200px]:h-[35rem] max-lg:overflow-hidden">
         <div className='absolute bottom-0 right-0 left-0 h-[35rem]'>
           <div>
@@ -104,14 +105,14 @@ const FourthSection = () => {
             <div className='bg-no-repeat bg-contain w-24 h-24 md:w-32 md:h-32 absolute bottom-72 md:bottom-60 max-md:right-[25%] md:left-[24rem]' style={{ backgroundImage: `url(${ECoin.src})` }}></div>
             <div className='bg-no-repeat bg-contain w-12 h-12 md:w-16 md:h-24 absolute top-0 right-1/2 md:right-[22rem]' style={{ backgroundImage: `url(${MCoin.src})` }}></div>
             <div className='bg-no-repeat bg-contain w-24 h-24 md:w-28 md:h-28 absolute bottom-44 right-[3%] md:right-8' style={{ backgroundImage: `url(${CCoin.src})` }}></div>
-            <img className='max-[400px]:hidden animation-right w-[25rem] md:w-[30rem] absolute bottom-20 max-md:left-[40%] md:right-80 max-md:-translate-x-1/2 bg-[#29313da7] rounded-lg' src={Wallets.src} alt="" />
+            <Image width={400} height={300} className='max-[400px]:hidden animation-right w-[25rem] md:w-[30rem] absolute bottom-20 max-md:left-[40%] md:right-80 max-md:-translate-x-1/2 bg-[#29313da7] rounded-lg' src={Wallets.src} alt="" />
             <div className='max-[400px]:hidden animation-left w-52 md:w-60 absolute bottom-[30%] md:bottom-52 right-[15%] md:right-20 bg-[#29313da7] rounded-lg'>
-              <img className='p-2 pb-4' src={MarketBtc.src} alt="" />
-              <img className='p-2 pb-4 bg-[#20252ca7] rounded-t-lg' src={MarketBca.src} alt="" />
-              <img className='p-2 pb-4 bg-[#1c1f25a7] rounded-lg' src={MarketEth.src} alt="" />
+              <Image width={400} height={300} className='p-2 pb-4' src={MarketBtc.src} alt="" />
+              <Image width={400} height={300} className='p-2 pb-4 bg-[#20252ca7] rounded-t-lg' src={MarketBca.src} alt="" />
+              <Image width={400} height={300} className='p-2 pb-4 bg-[#1c1f25a7] rounded-lg' src={MarketEth.src} alt="" />
             </div>
-            <img className='max-[400px]:hidden animation-up w-48 md:w-52 absolute -top-[5%] md:-top-20 right-[10%] md:right-24 bg-[#29313da7] rounded-lg' src={Order.src} alt="" />
-            <img className='max-[400px]:hidden animation-right w-40 md:w-52 absolute -top[5%] md:-top-12 max-md:left-[10%] md:right-[33rem] bg-[#29313da7] rounded-lg' src={Deposit.src} alt="" />
+            <Image width={400} height={300} className='max-[400px]:hidden animation-up w-48 md:w-52 absolute -top-[5%] md:-top-20 right-[10%] md:right-24 bg-[#29313da7] rounded-lg' src={Order.src} alt="" />
+            <Image width={400} height={300} className='max-[400px]:hidden animation-right w-40 md:w-52 absolute -top[5%] md:-top-12 max-md:left-[10%] md:right-[33rem] bg-[#29313da7] rounded-lg' src={Deposit.src} alt="" />
           </div>
         </div>
         <div className='w-full h-full flex justify-center min-[1200px]:justify-end'>

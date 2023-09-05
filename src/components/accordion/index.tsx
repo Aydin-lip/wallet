@@ -32,7 +32,7 @@ const Accordion = ({ children }: IProps) => {
 
   return (
     <>
-      <style children={Style}></style>
+      <style>{Style}</style>
       <div className="w-full">
         <ul>
           {children}

@@ -82,7 +82,7 @@ const Navbar = () => {
 
   return (
     <>
-      <style children={style} />
+      <style>{style}</style>
       <nav
         className={`${
           scroll ? 'shadow-lg bg-black' : ''
