@@ -29,7 +29,7 @@ const LiftComponent = () => {
 
   return (
     <>
-      <style children={Style}></style>
+      <style>{Style}</style>
       <div
         className={`${show ? '' : 'invisible opacity-0 bottom-40'} transition-all duration-500 animation-lift fixed left-6 min-[400px]:left-10 bottom-10 z-[2] bg-active-them w-12 h-12 rounded-[62%_38%_46%_54%_/_60%_63%_37%_40%] shadow-[0px_3px_10px_#868686] cursor-pointer`}
         onClick={() => window.scrollTo(0, 0)}
